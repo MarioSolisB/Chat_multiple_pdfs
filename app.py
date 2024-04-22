@@ -16,6 +16,8 @@ def main():
     st.text_input ("Ask a question about your documentos:")
 
     with st.sidebar:
+        azure_api_key = st.text_input("Azure API Key", type="password")
+        st.divider()
         st.subheader("Your documents")
         st.file_uploader("Upload your PDFs here and click on 'Process'")
         st.button("Process")
