@@ -1,8 +1,18 @@
 import streamlit as st
-
+import os
+import json
+from PyPDF2 import PdfReader
 
 #######################################
 # BACKEND
+
+def get_pdf_text(pdf_docs):
+    text = ""
+    for pdf in pdf_docs:
+        pdf_reader = PdfReader(pdf)
+        for page in pdf_reader.pages:
+            text += page.extract_text()
+    return text
 
 
 #######################################
@@ -23,8 +33,8 @@ def main():
         pdf_docs = st.file_uploader("Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
         if st.button("Process"):
             with st.spinner("Processing"):
-                azure_api_key
                 # Get PDF
+                raw_text = get_pdf_text(pdf_docs)
                 # Get Text Chunks
                 # Create vectorstore
 
