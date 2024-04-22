@@ -24,10 +24,10 @@ def main():
     st.text_input ("Ask a question about your documentos:")
 
     with st.sidebar:
-        #st.subheader("Introduce your API Key")
-        #azure_api_key = st.text_input("Azure API Key", type="password")
-        # st.text_input("OpenAI API Key", type="password")
-        #st.divider()
+        st.subheader("Introduce your API Key")
+        azure_api_key = st.text_input("Azure API Key", type="password")
+        #st.text_input("OpenAI API Key", type="password")
+        st.divider()
         ####
         st.subheader("Your documents")
         pdf_docs = st.file_uploader("Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
@@ -35,6 +35,7 @@ def main():
             with st.spinner("Processing"):
                 # Get PDF
                 raw_text = get_pdf_text(pdf_docs)
+                st.write(raw_text)
                 # Get Text Chunks
                 # Create vectorstore
 
