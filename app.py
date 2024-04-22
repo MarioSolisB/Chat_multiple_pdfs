@@ -2,6 +2,9 @@ import streamlit as st
 import os
 import json
 from PyPDF2 import PdfReader
+from langchain.text_splitter import CharacterTextSplitter
+
+
 
 #######################################
 # BACKEND
@@ -13,6 +16,19 @@ def get_pdf_text(pdf_docs):
         for page in pdf_reader.pages:
             text += page.extract_text()
     return text
+
+def get_text_chunks(text):
+        # Initialize the textsplitter
+    text_splitter = CharacterTextSplitter(
+        separator="\n",
+        chunk_size=800,
+        chunk_overlap=100,
+        length_function=len
+    )
+
+    chunks = text_splitter.split_text(text)
+    return chunks
+
 
 
 #######################################
@@ -35,8 +51,12 @@ def main():
             with st.spinner("Processing"):
                 # Get PDF
                 raw_text = get_pdf_text(pdf_docs)
-                st.write(raw_text)
+                                
                 # Get Text Chunks
+                text_chunks = get_text_chunks(raw_text)
+                st.write(text_chunks)
+
+
                 # Create vectorstore
 
 
