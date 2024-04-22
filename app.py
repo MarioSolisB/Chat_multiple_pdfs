@@ -24,12 +24,8 @@ def main():
         st.header("Your documents")
         pdf_docs = st.file_uploader("Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
         if st.button("Process"):
-            st.spinner("Processing"):
-                # Get PDF
+        st.spinner("Processing")
 
-                # Get Text Chunks
-
-                # Create vectorstore
 
 
 if __name__ == '__main__':
