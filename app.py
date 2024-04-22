@@ -18,7 +18,7 @@ def main():
     with st.sidebar:
         st.header("Introduce your API Key")
         azure_api_key = st.text_input("Azure API Key", type="password")
-        st.text_input("OpenAI API Key", type="password")
+        # st.text_input("OpenAI API Key", type="password")
         st.divider()
         ####
         st.header("Your documents")
