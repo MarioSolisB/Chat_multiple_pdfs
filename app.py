@@ -5,8 +5,6 @@ import streamlit as st
 # BACKEND
 
 
-
-
 #######################################
 # FRONTEND 
 def main():
