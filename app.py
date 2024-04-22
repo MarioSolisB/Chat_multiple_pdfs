@@ -16,6 +16,7 @@ def main():
     st.text_input ("Ask a question about your documentos:")
 
     with st.sidebar:
+        st.subheader("Introduce your API Key")
         azure_api_key = st.text_input("Azure API Key", type="password")
         st.divider()
         st.subheader("Your documents")
