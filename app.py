@@ -20,9 +20,16 @@ def main():
         azure_api_key = st.text_input("Azure API Key", type="password")
         st.text_input("OpenAI API Key", type="password")
         st.divider()
+        ####
         st.header("Your documents")
-        st.file_uploader("Upload your PDFs here and click on 'Process'")
-        st.button("Process")
+        pdf_docs = st.file_uploader("Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
+        if st.button("Process"):
+            st.spinner("Processing"):
+                # Get PDF
+
+                # Get Text Chunks
+
+                # Create vectorstore
 
 
 if __name__ == '__main__':
