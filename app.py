@@ -87,9 +87,9 @@ def main():
                 vectorstore = get_vectorstore(text_chunks)
 
                 # Create a conversation 
-                st.session_state.conversation =  get_conversation_chain(vectorstore)
+                st.session_state.conversation =  get_conversation_chain(vectorstore) # St.session_state in order to retain conversation
 
-    st.session_state.conversartion
+    st.session_state.conversation
 
 
 if __name__ == '__main__':
