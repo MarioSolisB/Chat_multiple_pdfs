@@ -8,6 +8,7 @@ from langchain_community.vectorstores.faiss import FAISS
 from langchain_community.llms import AzureOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
+from langchain_openai import AzureChatOpenAI # from langchain.chat_models import AzureChatOpenAI < Langachain v0.2.0
 
 #######################################
 # BACKEND
