@@ -91,6 +91,21 @@ def main():
 
     st.session_state.conversation
 
+    # Load JSON file
+    with open('keys.json', 'r') as file:
+        data = json.load(file)
+
+# Access to API KEYS
+    MODEL = data["model"]
+    AZURE_ENDPOINT = data["AZURE_OPENAI_ENDPOINT"]
+    #AZURE_API_KEY = data["AZURE_OPENAI_API_KEY"]
+    API_VERSION = data["api_version"]
+
+    os.environ["OPENAI_API_TYPE"] = "azure"
+    os.environ["AZURE_OPENAI_ENDPOINT"] = AZURE_ENDPOINT
+    os.environ["AZURE_OPENAI_API_KEY"] = azure_api_key
+
+
 
 if __name__ == '__main__':
     main()
