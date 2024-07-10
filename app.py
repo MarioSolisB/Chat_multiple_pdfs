@@ -59,7 +59,8 @@ def get_conversation_chain(vectorstore):
 # FRONTEND 
 def main():
     st.set_page_config(page_title="Chat with multiple PDFs", page_icon=":books:")
-
+    
+    # Start conversation state
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
 
@@ -91,6 +92,7 @@ def main():
 
     st.session_state.conversation
 
+#######################################
 # Load JSON file
     with open('keys.json', 'r') as file:
         data = json.load(file)
