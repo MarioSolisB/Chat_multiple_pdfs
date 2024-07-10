@@ -90,7 +90,8 @@ def main():
                 # Create a conversation 
                 st.session_state.conversation =  get_conversation_chain(vectorstore) # St.session_state in order to retain conversation
 
-    st.session_state.conversation
+    #st.session_state.conversation
+#StreamlitChat
 
 #######################################
 # Load JSON file
